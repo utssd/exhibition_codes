@@ -11,6 +11,6 @@ gcc: gcc version 5.4.0 20160609
 If the order book is heavily used for storage other than looking-up, then BST is better than array; if the order book is heavily used for looking-up than storage, then array is better than BST, since once it is sorted, we can access later for constant time. Here I implemented it using a BST.
 3. Use std::map (`_buy_price` and `_sell_price`) as BST for storing price; key is a price and value is aggregated size at that price; everytime new order is added at that price, size will be updated in the map; if order is modified, this map is also updated to reflect current size
 4. The unordered_map (`_buy`) and map (`_buy_price`) is related by storing map::iterator in unordered_map, so in case the order is deleted, it takes constant time to delete corresponding prize in the searching tree; also convenient for updating size in `_buy_price`
-5. sell orders and buy orders will be stored in two different instances; so do their price
+5. sell orders and buy orders will be stored in two different instances; so are their price
 6. Some utility functions, including reading, printing, size checking should be added.
 
